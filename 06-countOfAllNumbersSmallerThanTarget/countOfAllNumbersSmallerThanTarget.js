@@ -1,6 +1,5 @@
-function countOfAllNumbersSmallerThanTarget(nums, target) {
-  // Insert code here;
-}
+const countOfAllNumbersSmallerThanTarget = (nums, target) => nums.reduce((p, c) => p + Number(c < target) , 0) 
+
 
 // Do not edit this line;
 module.exports = countOfAllNumbersSmallerThanTarget;

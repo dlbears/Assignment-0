@@ -4,7 +4,16 @@ class MySolution {
   }
 
   binarySearch(nums, target) {
-    // Insert code here;
+    if (nums.length > 2) {
+    const iCenter = Math.floor(nums.length / 2)
+    const center = nums[iCenter],
+          left = nums.slice(0, iCenter),
+          right = nums.slice(iCenter + 1)
+
+    return center === target || this.binarySearch(left, target) || this.binarySearch(right, target)
+    } else {
+      return nums.reduce((p, c) => p || c === target, false)
+    }
   }
 }
 
